@@ -7,12 +7,14 @@ from src.extract import extract_table
 from src.load import load_to_parquet
 from src.transform import clean_scraped_data, transform_to_dataframe
 
-LOG_FILE = Path("scraper_history.txt")
+LOG_FILE = Path("logs/scraper_history.txt")
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-handler = TimedRotatingFileHandler(LOG_FILE, when="midnight", backupCount=30)
+handler = TimedRotatingFileHandler(
+    LOG_FILE, when="midnight", backupCount=30, encoding="utf-8"
+)
 handler.setLevel(logging.INFO)
 handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 logger.addHandler(handler)

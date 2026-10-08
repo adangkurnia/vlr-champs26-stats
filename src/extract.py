@@ -43,6 +43,7 @@ def extract_table(
 
     # Get headers of the table
     headers = [header.text.strip().lower() for header in table.find_all("th")]
+    # Add custom header to store agent lists
     headers.append("agents_list")
 
     logger.info("Get table headers: %s", headers)

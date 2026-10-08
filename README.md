@@ -53,7 +53,7 @@ After extraction, the script cleans the dataset by:
 - `src/transform.py` – cleans and standardizes the scraped dataset
 - `src/load.py` – saves the DataFrames to Parquet files
 - `data/raw/` – raw extracted table data
-- `data/silver/` – cleaned, analysis-ready dataset
+- `data/clean/` – cleaned, analysis-ready dataset
 
 ## How to run
 

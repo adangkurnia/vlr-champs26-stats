@@ -1,6 +1,9 @@
+import logging
 import os
 
 import pandas as pd
+
+logger = logging.getLogger(__name__)
 
 
 def load_to_parquet(
@@ -29,7 +32,9 @@ def load_to_parquet(
         df.to_parquet(
             path=file_path, engine="pyarrow", compression=compression, index=keep_index
         )
-        print(f"Successfully saved DataFrame to {file_path}")
+        logger.info("Successfully saved DataFrame to %s", file_path)
 
     except FileExistsError as e:
-        print(f"Error saving DataFrame to Parquet: {e}")
+        logger.error("Error saving DataFrame to Parquet: %s", e)
+    except OSError as e:
+        logger.error("Error saving DataFrame to Parquet: %s", e)

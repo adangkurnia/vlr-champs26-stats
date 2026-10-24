@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 def extract_table(
     url: str = "https://www.vlr.gg/event/stats/2766/valorant-champions-2026",
     tag: str = "table",
-    class_tag: str = "st-table mod-hide-maps mod-hide-fbpr mod-hide-fdpr mod-hide-fk mod-hide-fd",
+    class_tag: str = "st-table mod-hide-rnd mod-hide-fkpr mod-hide-fdpr mod-hide-fk mod-hide-fd",
 ) -> pd.DataFrame:
     """
     Extracting a table from website using requests and beautifulsoup4 modules.
